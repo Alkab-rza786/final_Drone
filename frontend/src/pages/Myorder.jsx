@@ -989,11 +989,13 @@ function Myorder() {
                                   type="date"
                                   className="px-2 py-1 w-2/3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500 text-xs"
                                   value={workData[task.id]?.date || ""}
-                                  min={new Date().toISOString().split("T")[0]} // 👈 disables past dates
+                                  min={new Date(task.startDate).toISOString().split("T")[0]}     // ✅ set min date from DB
+                                  max={new Date(task.endDate).toISOString().split("T")[0]}       // ✅ set max date from DB
                                   onChange={(e) =>
                                     handleInputChange(task.id, "date", e.target.value)
                                   }
                                 />
+
 
                               </div>
 

@@ -1,7 +1,6 @@
 // import Booking from "../models/Booking.js";
 // import User from "../models/User.js";
 // import Drone from "../models/drone.js"; // Ensure Drone model is imported
-import mongoose from "mongoose";
 import { v2 as cloudinary } from 'cloudinary'
 import db1 from "../models/index.js";
 import { Op } from 'sequelize'
