@@ -371,7 +371,7 @@ const getPilotTask = async (req, res) => {
 
     const pilotTasks = await Booking.findAll({
       where: { pilot: String(userId) }, // Ensure consistent type with DB
-      order: [['createdAt', 'DESC']]
+      order: [['updatedAt', 'DESC']]
     });
 
     console.log(pilotTasks)

@@ -159,7 +159,7 @@ function Drone() {
                 <DatePicker
                   inline
                   selected={selectedDroneId === drone._id ? selectedDate : null} // Show date only for selected drone
-                  onChange={(date) => handleDateChange(date, drone._id)}
+                  onChange={(date) => handleDateChange(date, drone.id)}
                   minDate={new Date()}
                   excludeDates={
                     (() => {

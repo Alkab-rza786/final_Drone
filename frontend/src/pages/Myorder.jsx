@@ -655,7 +655,7 @@ function Myorder() {
                     </tr>
                   </thead>
                   <tbody>
-                    {pilotTask.reverse().map((task, index) => (
+                    {pilotTask.map((task, index) => (
                       <tr key={task.id} className="text-center border-b">
                         <td className="border px-4 py-2">{index + 1}</td>
                         <td className="border px-4 py-2">
@@ -989,8 +989,8 @@ function Myorder() {
                                   type="date"
                                   className="px-2 py-1 w-2/3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-green-500 text-xs"
                                   value={workData[task.id]?.date || ""}
-                                  min={new Date(task.startDate).toISOString().split("T")[0]}     // ✅ set min date from DB
-                                  max={new Date(task.endDate).toISOString().split("T")[0]}       // ✅ set max date from DB
+                                  min={new Date(task.startDate).toISOString().split("T")[0]}     
+                                  max={new Date(task.endDate).toISOString().split("T")[0]}       
                                   onChange={(e) =>
                                     handleInputChange(task.id, "date", e.target.value)
                                   }

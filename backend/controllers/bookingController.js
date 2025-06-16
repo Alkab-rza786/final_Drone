@@ -539,7 +539,7 @@ const workUpdate = async (req, res) => {
     }
 
     const workDate = new Date(date);
-    workDate.setHours(0, 0, 0, 0);
+    // workDate.setHours(0, 0, 0, 0);
     const workDateString = workDate.toISOString();
 
     const booking = await Booking.findByPk(id);

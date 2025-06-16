@@ -265,7 +265,10 @@ export const getAllAdmins = async (req, res) => {
 
 const getAllBookings = async (req, res) => {
   try {
-    const allBooking = await db1.Booking.findAll();
+    const allBooking = await db1.Booking.findAll({
+      order: [['updatedAt', 'ASC']]
+    });
+
 
     if (allBooking.length === 0) {
       return res.json({ success: false, message: "No Booking Available" });
