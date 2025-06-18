@@ -316,9 +316,18 @@ const AdminContextProvider = (props) => {
         }
     }
 
+
     useEffect(() => {
+        const interval = setInterval(() => {
+            getAllBokings(); // call the function every 10 seconds
+        }, 10000); // 10000ms = 10 seconds
+
+        // Optional: Call it immediately when the component mounts
         getAllBokings();
-    }, [])
+
+        // Cleanup the interval on component unmount
+        return () => clearInterval(interval);
+    }, []);
     const getUpcomingBookings = async () => {
         try {
             const { data } = await axios.get(`${backendUrl}/api/admin/getBookings`, {
